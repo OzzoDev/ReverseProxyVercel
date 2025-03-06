@@ -5,7 +5,7 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:3000/api/data");
+      const response = await fetch("https://reverse-proxy-vercel-nine.vercel.app/api/data");
 
       const result = await response.json();
 
