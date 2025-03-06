@@ -13,5 +13,12 @@ export default function App() {
     })();
   }, []);
 
+  // "builds": [
+  //     {
+  //         "src": "server.js",
+  //         "use": "@vercel/node"
+  //     }
+  // ],
+
   return <div>{data}</div>;
 }
