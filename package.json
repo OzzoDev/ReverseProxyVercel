@@ -1,0 +1,28 @@
+{
+  "name": "vercel-hosting",
+  "version": "1.0.0",
+  "description": "A test project to explore how to host node js app on vercel",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run proxy\" \"npm run react\"",
+    "proxy": "node server.js",
+    "react": "cd public && npm run dev",
+    "install": "concurrently \"npm install\" \"cd public && npm install\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OzzoDev/ReverseProxyVercel.git"
+  },
+  "author": "OzzoDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OzzoDev/ReverseProxyVercel/issues"
+  },
+  "homepage": "https://github.com/OzzoDev/ReverseProxyVercel#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3",
+    "path": "^0.12.7"
+  }
+}
