@@ -5,7 +5,7 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("https://reverse-proxy-vercel-nine.vercel.app/api/data");
+      const response = await fetch("https://reverse-proxy-vercel-five.vercel.app/api/data");
 
       const result = await response.json();
 
@@ -13,5 +13,10 @@ export default function App() {
     })();
   }, []);
 
-  return <div>{data}</div>;
+  return (
+    <div>
+      <p>Hello world</p>
+      {data}
+    </div>
+  );
 }
