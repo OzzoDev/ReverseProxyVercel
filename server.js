@@ -12,6 +12,10 @@ const REACT_DEV_SERVER = "http://localhost:5173";
 
 app.use("/api", Router);
 
+app.use("/api/*", (_, res) => {
+  res.status(404).json({ error: "API route not found" });
+});
+
 if (NODE_ENV !== "production") {
   console.log("Running in development mode...");
 

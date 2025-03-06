@@ -5,11 +5,19 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("https://reverse-proxy-vercel-one.vercel.app/api/data");
+      try {
+        const response = await fetch("https://reverse-proxy-vercel-one.vercel.app/api/data");
 
-      const result = await response.json();
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-      setData(result.data as string);
+        const result = await response.json();
+        setData(result.data);
+      } catch (error) {
+        console.error("API fetch failed:", error);
+        setData("Failed to load data.");
+      }
     })();
   }, []);
 
